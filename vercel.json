@@ -1,3 +1,31 @@
+<<<<<<< HEAD
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/api/main.py",
+      "use": "@vercel/python",
+      "config": {
+        "pythonVersion": "3.11"
+      }
+    },
+    {
+      "src": "nextjs-app/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/api/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "nextjs-app/$1"
+    }
+  ]
+}
+=======
 {
   "version": 2,
   "builds": [
@@ -27,3 +55,4 @@
     "NEXT_PUBLIC_API_URL": "@next-public-api-url"
   }
 }
+>>>>>>> 712ced2cf0352b367224beab5f19352852286e8a
